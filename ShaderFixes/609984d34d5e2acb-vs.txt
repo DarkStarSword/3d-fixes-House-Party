@@ -1,0 +1,202 @@
+// asmtool.py -I ../.. --auto-fix-vertex-halo --fix-unusual-halo-with-inconsistent-w-optimisation --fix-unity-reflection --fix-unity-frustum-world --only-autofixed 609984d34d5e2acb-vs.txt
+// 3DMigoto: 609984d34d5e2acb | Matched 180 variants of 6 shaders: Ciconia Studio/Effects/Highlight/Cutout/Diffuse, Ciconia Studio/Effects/Highlight/Cutout/Diffuse Bump, Ciconia Studio/Effects/Highlight/Diffuse, Ciconia Studio/Effects/Highlight/Diffuse Bump, Ciconia Studio/Effects/Highlight/Double Sided/Cutout/Diffuse, Ciconia Studio/Effects/Highlight/Double Sided/Cutout/Diffuse Bump
+//
+// fffffffc0000000000000000000000000000000000000:    Unity headers extracted from Ciconia Studio_Effects_Highlight_Cutout_Diffuse
+// 00000003fffffff000000000000000000000000000000:    Unity headers extracted from Ciconia Studio_Effects_Highlight_Cutout_Diffuse Bump
+// 00000000000000000000003fffffff000000000000000:    Unity headers extracted from Ciconia Studio_Effects_Highlight_Diffuse
+// 00000000000000000000000000000000000003fffffff:    Unity headers extracted from Ciconia Studio_Effects_Highlight_Diffuse Bump
+// 000000000000000000000000000000fffffffc0000000:    Unity headers extracted from Ciconia Studio_Effects_Highlight_Double Sided_Cutout_Diffuse
+// 000000000000000fffffffc0000000000000000000000:    Unity headers extracted from Ciconia Studio_Effects_Highlight_Double Sided_Cutout_Diffuse Bump
+// 00000003fffffff000000000000000000000000000000:    Shader "Ciconia Studio/Effects/Highlight/Cutout/Diffuse Bump" {
+// fffffffc0000000000000000000000000000000000000:    Shader "Ciconia Studio/Effects/Highlight/Cutout/Diffuse" {
+// 00000000000000000000000000000000000003fffffff:    Shader "Ciconia Studio/Effects/Highlight/Diffuse Bump" {
+// 00000000000000000000003fffffff000000000000000:    Shader "Ciconia Studio/Effects/Highlight/Diffuse" {
+// 000000000000000fffffffc0000000000000000000000:    Shader "Ciconia Studio/Effects/Highlight/Double Sided/Cutout/Diffuse Bump" {
+// 000000000000000000000000000000fffffffc0000000:    Shader "Ciconia Studio/Effects/Highlight/Double Sided/Cutout/Diffuse" {
+//                                                     CustomEditor "ShaderForgeMaterialInspector"
+//                                                     Fallback "Diffuse"
+//                                                     SubShader 1/1 {
+// ffffffffffffffffffffffc0000000fffffffc0000000:        Tags { "QUEUE"="AlphaTest" "RenderType"="TransparentCutout" }
+// 00000000000000000000003fffffff00000003fffffff:        Tags { "RenderType"="Opaque" }
+// 00000000000000000000003fffffff00000003fffffff:        Pass 2/4 {
+// ffffffffffffffffffffffc0000000fffffffc0000000:        Pass 2/5 {
+//                                                         Name "FORWARD"
+// ffffffffffffffffffffffc0000000fffffffc0000000:          Tags { "LIGHTMODE"="FORWARDBASE" "QUEUE"="AlphaTest" "RenderType"="TransparentCutout" "SHADOWSUPPORT"="true" }
+// 00000000000000000000003fffffff00000003fffffff:          Tags { "LIGHTMODE"="FORWARDBASE" "RenderType"="Opaque" "SHADOWSUPPORT"="true" }
+//                                                         Program "vp" {
+//                                                           SubProgram "d3d11" {
+//                                                           }
+//                                                         }
+//                                                       }
+//                                                     }
+//                                                   }
+//
+// 00000003fffffff000000000000000000000000000000: Unity 5.3 headers extracted from Ciconia Studio_Effects_Highlight_Cutout_Diffuse Bump:
+// fffffffc0000000000000000000000000000000000000: Unity 5.3 headers extracted from Ciconia Studio_Effects_Highlight_Cutout_Diffuse:
+// 00000000000000000000000000000000000003fffffff: Unity 5.3 headers extracted from Ciconia Studio_Effects_Highlight_Diffuse Bump:
+// 00000000000000000000003fffffff000000000000000: Unity 5.3 headers extracted from Ciconia Studio_Effects_Highlight_Diffuse:
+// 000000000000000fffffffc0000000000000000000000: Unity 5.3 headers extracted from Ciconia Studio_Effects_Highlight_Double Sided_Cutout_Diffuse Bump:
+// 000000000000000000000000000000fffffffc0000000: Unity 5.3 headers extracted from Ciconia Studio_Effects_Highlight_Double Sided_Cutout_Diffuse:
+//                                                  API d3d11
+//                                                  Shader model vs_4_0
+//                                                  undeciphered1: 201708220 31 0 0
+//                                                  undeciphered1a: 4
+// 000010000000400000010000000400000010000000400:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "DIRLIGHTMAP_COMBINED" "FOG_EXP2" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" }
+// 000100000004000000100000004000000100000004000:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "DIRLIGHTMAP_COMBINED" "FOG_EXP2" "VERTEXLIGHT_ON" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" }
+// 001000000040000001000000040000001000000040000:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "DIRLIGHTMAP_COMBINED" "LIGHTMAP_SHADOW_MIXING" "SHADOWS_SHADOWMASK" "FOG_EXP2" "VERTEXLIGHT_ON" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" }
+// 000080000002000000080000002000000080000002000:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "DIRLIGHTMAP_COMBINED" "LIGHTMAP_SHADOW_MIXING" "SHADOWS_SHADOWMASK" "LIGHTPROBE_SH" "FOG_EXP2" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" }
+// 002000000080000002000000080000002000000080000:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "DIRLIGHTMAP_COMBINED" "LIGHTMAP_SHADOW_MIXING" "SHADOWS_SHADOWMASK" "LIGHTPROBE_SH" "FOG_EXP2" "VERTEXLIGHT_ON" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" }
+// 000020000000800000020000000800000020000000800:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "DIRLIGHTMAP_COMBINED" "LIGHTPROBE_SH" "FOG_EXP2" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" }
+// 000200000008000000200000008000000200000008000:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "DIRLIGHTMAP_COMBINED" "LIGHTPROBE_SH" "FOG_EXP2" "VERTEXLIGHT_ON" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" }
+// 000400000010000000400000010000000400000010000:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "DIRLIGHTMAP_COMBINED" "SHADOWS_SHADOWMASK" "FOG_EXP2" "VERTEXLIGHT_ON" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" }
+// 000040000001000000040000001000000040000001000:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "DIRLIGHTMAP_COMBINED" "SHADOWS_SHADOWMASK" "LIGHTPROBE_SH" "FOG_EXP2" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" }
+// 000800000020000000800000020000000800000020000:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "DIRLIGHTMAP_COMBINED" "SHADOWS_SHADOWMASK" "LIGHTPROBE_SH" "FOG_EXP2" "VERTEXLIGHT_ON" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" }
+// 004000000100000004000000100000004000000100000:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "FOG_EXP2" "DIRLIGHTMAP_SEPARATE" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" }
+// 000000040000001000000040000001000000040000001:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "FOG_EXP2" "LIGHTMAP_OFF" "DIRLIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" }
+// 040000001000000040000001000000040000001000000:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "FOG_EXP2" "VERTEXLIGHT_ON" "DIRLIGHTMAP_SEPARATE" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" }
+// 000000400000010000000400000010000000400000010:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "FOG_EXP2" "VERTEXLIGHT_ON" "LIGHTMAP_OFF" "DIRLIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" }
+// 400000010000000400000010000000400000010000000:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_SHADOW_MIXING" "SHADOWS_SHADOWMASK" "FOG_EXP2" "VERTEXLIGHT_ON" "DIRLIGHTMAP_SEPARATE" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" }
+// 000004000000100000004000000100000004000000100:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_SHADOW_MIXING" "SHADOWS_SHADOWMASK" "FOG_EXP2" "VERTEXLIGHT_ON" "LIGHTMAP_OFF" "DIRLIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" }
+// 020000000800000020000000800000020000000800000:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_SHADOW_MIXING" "SHADOWS_SHADOWMASK" "LIGHTPROBE_SH" "FOG_EXP2" "DIRLIGHTMAP_SEPARATE" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" }
+// 000000200000008000000200000008000000200000008:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_SHADOW_MIXING" "SHADOWS_SHADOWMASK" "LIGHTPROBE_SH" "FOG_EXP2" "LIGHTMAP_OFF" "DIRLIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" }
+// 800000020000000800000020000000800000020000000:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_SHADOW_MIXING" "SHADOWS_SHADOWMASK" "LIGHTPROBE_SH" "FOG_EXP2" "VERTEXLIGHT_ON" "DIRLIGHTMAP_SEPARATE" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" }
+// 000008000000200000008000000200000008000000200:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_SHADOW_MIXING" "SHADOWS_SHADOWMASK" "LIGHTPROBE_SH" "FOG_EXP2" "VERTEXLIGHT_ON" "LIGHTMAP_OFF" "DIRLIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" }
+// 008000000200000008000000200000008000000200000:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTPROBE_SH" "FOG_EXP2" "DIRLIGHTMAP_SEPARATE" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" }
+// 000000080000002000000080000002000000080000002:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTPROBE_SH" "FOG_EXP2" "LIGHTMAP_OFF" "DIRLIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" }
+// 080000002000000080000002000000080000002000000:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTPROBE_SH" "FOG_EXP2" "VERTEXLIGHT_ON" "DIRLIGHTMAP_SEPARATE" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" }
+// 000000800000020000000800000020000000800000020:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTPROBE_SH" "FOG_EXP2" "VERTEXLIGHT_ON" "LIGHTMAP_OFF" "DIRLIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" }
+// 100000004000000100000004000000100000004000000:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "SHADOWS_SHADOWMASK" "FOG_EXP2" "VERTEXLIGHT_ON" "DIRLIGHTMAP_SEPARATE" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" }
+// 000001000000040000001000000040000001000000040:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "SHADOWS_SHADOWMASK" "FOG_EXP2" "VERTEXLIGHT_ON" "LIGHTMAP_OFF" "DIRLIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" }
+// 010000000400000010000000400000010000000400000:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "SHADOWS_SHADOWMASK" "LIGHTPROBE_SH" "FOG_EXP2" "DIRLIGHTMAP_SEPARATE" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" }
+// 000000100000004000000100000004000000100000004:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "SHADOWS_SHADOWMASK" "LIGHTPROBE_SH" "FOG_EXP2" "LIGHTMAP_OFF" "DIRLIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" }
+// 200000008000000200000008000000200000008000000:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "SHADOWS_SHADOWMASK" "LIGHTPROBE_SH" "FOG_EXP2" "VERTEXLIGHT_ON" "DIRLIGHTMAP_SEPARATE" "LIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" }
+// 000002000000080000002000000080000002000000080:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "SHADOWS_SHADOWMASK" "LIGHTPROBE_SH" "FOG_EXP2" "VERTEXLIGHT_ON" "LIGHTMAP_OFF" "DIRLIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" }
+//                                                  undeciphered2: 1 0 3 0 0 0
+//                                                  undeciphered3: 187 6 0 0 1 2 7 8 3 4 4 5 5 6
+//                                                  ConstBuffer "UnityPerCamera" 144
+//                                                  Vector 80 [_ProjectionParams]
+//                                                  ConstBuffer "UnityPerDraw" 160
+//                                                  Matrix 0 [unity_ObjectToWorld]
+//                                                  Matrix 64 [unity_WorldToObject]
+//                                                  ConstBuffer "UnityPerFrame" 368
+//                                                  Matrix 272 [unity_MatrixVP]
+//                                                  BindCB "UnityPerCamera" 0
+//                                                  BindCB "UnityPerDraw" 1
+//                                                  BindCB "UnityPerFrame" 2
+//
+// Headers extracted with DarkStarSword's extract_unity55_shaders.py
+// https://github.com/DarkStarSword/3d-fixes
+
+//
+// Generated by Microsoft (R) D3D Shader Disassembler
+//
+//   using 3Dmigoto v1.2.71 on Fri Feb 23 15:23:37 2018
+//
+//
+// Input signature:
+//
+// Name                 Index   Mask Register SysValue  Format   Used
+// -------------------- ----- ------ -------- -------- ------- ------
+// POSITION                 0   xyzw        0     NONE   float   xyzw
+// NORMAL                   0   xyz         1     NONE   float   xyz 
+// TANGENT                  0   xyzw        2     NONE   float   xyzw
+// TEXCOORD                 0   xy          3     NONE   float   xy  
+// TEXCOORD                 1   xy          4     NONE   float   xy  
+// TEXCOORD                 2   xy          5     NONE   float   xy  
+//
+//
+// Output signature:
+//
+// Name                 Index   Mask Register SysValue  Format   Used
+// -------------------- ----- ------ -------- -------- ------- ------
+// SV_POSITION              0   xyzw        0      POS   float   xyzw
+// TEXCOORD                 0   xy          1     NONE   float   xy  
+// TEXCOORD                 1     zw        1     NONE   float     zw
+// TEXCOORD                 2   xy          2     NONE   float   xy  
+// TEXCOORD                 9     z         2     NONE   float     z 
+// TEXCOORD                 3   xyzw        3     NONE   float   xyzw
+// TEXCOORD                 4   xyz         4     NONE   float   xyz 
+// TEXCOORD                 5   xyz         5     NONE   float   xyz 
+// TEXCOORD                 6   xyz         6     NONE   float   xyz 
+// TEXCOORD                 7   xyzw        7     NONE   float   xyzw
+// TEXCOORD                10   xyzw        8     NONE   float   xyzw
+//
+vs_4_0
+dcl_constantbuffer cb0[6], immediateIndexed
+dcl_constantbuffer cb1[7], immediateIndexed
+dcl_constantbuffer cb2[21], immediateIndexed
+dcl_input v0.xyzw
+dcl_input v1.xyz
+dcl_input v2.xyzw
+dcl_input v3.xy
+dcl_input v4.xy
+dcl_input v5.xy
+dcl_output_siv o0.xyzw, position
+dcl_output o1.xy
+dcl_output o1.zw
+dcl_output o2.xy
+dcl_output o2.z
+dcl_output o3.xyzw
+dcl_output o4.xyz
+dcl_output o5.xyz
+dcl_output o6.xyz
+dcl_output o7.xyzw
+dcl_output o8.xyzw
+dcl_temps 5
+
+// 3DMigoto StereoParams:
+dcl_resource_texture2d (float,float,float,float) t125
+
+ld_indexable(texture2d)(float,float,float,float) r4.xyzw, l(0, 0, 0, 0), t125.xyzw
+
+mul r0.xyzw, v0.yyyy, cb1[1].xyzw
+mad r0.xyzw, cb1[0].xyzw, v0.xxxx, r0.xyzw
+mad r0.xyzw, cb1[2].xyzw, v0.zzzz, r0.xyzw
+add r1.xyzw, r0.xyzw, cb1[3].xyzw
+mad o3.xyzw, cb1[3].xyzw, v0.wwww, r0.xyzw
+mul r0.xyzw, r1.yyyy, cb2[18].xyzw
+mad r0.xyzw, cb2[17].xyzw, r1.xxxx, r0.xyzw
+mad r0.xyzw, cb2[19].xyzw, r1.zzzz, r0.xyzw
+mad r0.xyzw, cb2[20].xyzw, r1.wwww, r0.xyzw
+mov o0.xyzw, r0.xyzw
+
+// Automatic vertex shader halo fix inserted with DarkStarSword's asmtool.py:
+// asmtool.py -I ../.. --auto-fix-vertex-halo --fix-unusual-halo-with-inconsistent-w-optimisation --fix-unity-reflection --fix-unity-frustum-world --only-autofixed 609984d34d5e2acb-vs.txt
+ne r4.w, r0.w, l(1.0)
+if_nz r4.w
+  add r4.w, r0.w, -r4.y
+  mad r0.x, r4.w, r4.x, r0.x
+endif
+
+mov o1.xy, v3.xyxx
+mov o1.zw, v4.xxxy
+mov o2.z, r0.z
+mov o7.zw, r0.zzzw
+mov o2.xy, v5.xyxx
+dp3 r1.x, v1.xyzx, cb1[4].xyzx
+dp3 r1.y, v1.xyzx, cb1[5].xyzx
+dp3 r1.z, v1.xyzx, cb1[6].xyzx
+dp3 r0.z, r1.xyzx, r1.xyzx
+rsq r0.z, r0.z
+mul r1.xyz, r0.zzzz, r1.xyzx
+mov o4.xyz, r1.xyzx
+mul r2.xyz, v2.yyyy, cb1[1].xyzx
+mad r2.xyz, cb1[0].xyzx, v2.xxxx, r2.xyzx
+mad r2.xyz, cb1[2].xyzx, v2.zzzz, r2.xyzx
+dp3 r0.z, r2.xyzx, r2.xyzx
+rsq r0.z, r0.z
+mul r2.xyz, r0.zzzz, r2.xyzx
+mov o5.xyz, r2.xyzx
+mul r3.xyz, r1.zxyz, r2.yzxy
+mad r1.xyz, r1.yzxy, r2.zxyz, -r3.xyzx
+mul r1.xyz, r1.xyzx, v2.wwww
+dp3 r0.z, r1.xyzx, r1.xyzx
+rsq r0.z, r0.z
+mul o6.xyz, r0.zzzz, r1.xyzx
+mul r0.y, r0.y, cb0[5].x
+mul r0.xz, r0.xxwx, l(0.500000, 0.000000, 0.500000, 0.000000)
+mul r0.w, r0.y, l(0.500000)
+add o7.xy, r0.zzzz, r0.xwxx
+mov o8.xyzw, l(0,0,0,0)
+ret 
+// Approximately 0 instruction slots used

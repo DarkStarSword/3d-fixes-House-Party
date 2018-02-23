@@ -1,0 +1,347 @@
+// asmtool.py -I ../.. --fix-unity-reflection --only-autofixed a12621b7bc982f06-ps.txt
+// 3DMigoto: a12621b7bc982f06 | Matched 9 variants of 1 shaders: Ciconia Studio/Effects/Highlight/Diffuse Bump
+//
+//         Unity headers extracted from Ciconia Studio_Effects_Highlight_Diffuse Bump
+//         Shader "Ciconia Studio/Effects/Highlight/Diffuse Bump" {
+//           CustomEditor "ShaderForgeMaterialInspector"
+//           Fallback "Diffuse"
+//           SubShader 1/1 {
+//             Tags { "RenderType"="Opaque" }
+//             Pass 2/4 {
+//               Name "FORWARD"
+//               Tags { "LIGHTMODE"="FORWARDBASE" "RenderType"="Opaque" "SHADOWSUPPORT"="true" }
+//               Program "fp" {
+//                 SubProgram "d3d11" {
+//                 }
+//               }
+//             }
+//           }
+//         }
+//
+//      Unity 5.3 headers extracted from Ciconia Studio_Effects_Highlight_Diffuse Bump:
+//        API d3d11
+//        Shader model ps_4_0
+//        undeciphered1: 201708220 151 9 6
+//        undeciphered1a: 11
+// 004:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_ON" "DIRLIGHTMAP_COMBINED" "LIGHTMAP_SHADOW_MIXING" "SHADOWS_SHADOWMASK" "LIGHTPROBE_SH" "DIRLIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" }
+// 100:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_ON" "DIRLIGHTMAP_COMBINED" "LIGHTMAP_SHADOW_MIXING" "SHADOWS_SHADOWMASK" "LIGHTPROBE_SH" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" }
+// 020:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_ON" "DIRLIGHTMAP_COMBINED" "LIGHTMAP_SHADOW_MIXING" "SHADOWS_SHADOWMASK" "LIGHTPROBE_SH" "DYNAMICLIGHTMAP_OFF" }
+// 001:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_ON" "DIRLIGHTMAP_COMBINED" "LIGHTPROBE_SH" "DIRLIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" }
+// 040:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_ON" "DIRLIGHTMAP_COMBINED" "LIGHTPROBE_SH" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" }
+// 008:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_ON" "DIRLIGHTMAP_COMBINED" "LIGHTPROBE_SH" "DYNAMICLIGHTMAP_OFF" }
+// 002:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_ON" "DIRLIGHTMAP_COMBINED" "SHADOWS_SHADOWMASK" "LIGHTPROBE_SH" "DIRLIGHTMAP_OFF" "DYNAMICLIGHTMAP_OFF" }
+// 080:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_ON" "DIRLIGHTMAP_COMBINED" "SHADOWS_SHADOWMASK" "LIGHTPROBE_SH" "DIRLIGHTMAP_SEPARATE" "DYNAMICLIGHTMAP_OFF" }
+// 010:   Keywords { "DIRECTIONAL" "SHADOWS_SCREEN" "LIGHTMAP_ON" "DIRLIGHTMAP_COMBINED" "SHADOWS_SHADOWMASK" "LIGHTPROBE_SH" "DYNAMICLIGHTMAP_OFF" }
+//        undeciphered2: 1 9 5 7 0 0
+//        undeciphered3: 0 0
+//        ConstBuffer "$Globals" 1216
+//        Vector 0 [unity_Lightmap_HDR]
+//        Vector 1056 [_LightColor0]
+//        Vector 1088 [_DiffuseMap_ST]
+//        Vector 1104 [_DiffuseColor]
+//        Vector 1120 [_HighlightColor]
+//        Float 1136 [_FresnelStrength]
+//        Float 1140 [_EmissiveIntensity]
+//        Float 1144 [_SpecularIntensity]
+//        Float 1148 [_NormalIntensity]
+//        Vector 1152 [_NormalMap_ST]
+//        Float 1168 [_Glossiness]
+//        Vector 1184 [_SpecularColor]
+//        Vector 1200 [_SpecularMap_ST]
+//        ConstBuffer "UnityPerCamera" 144
+//        Vector 64 [_WorldSpaceCameraPos] 3
+//        ConstBuffer "UnityLighting" 768
+//        Vector 0 [_WorldSpaceLightPos0]
+//        Vector 624 [unity_SHAr]
+//        Vector 640 [unity_SHAg]
+//        Vector 656 [unity_SHAb]
+//        Vector 672 [unity_SHBr]
+//        Vector 688 [unity_SHBg]
+//        Vector 704 [unity_SHBb]
+//        Vector 720 [unity_SHC]
+//        ConstBuffer "UnityReflectionProbes" 128
+//        Vector 0 [unity_SpecCube0_BoxMax]
+//        Vector 16 [unity_SpecCube0_BoxMin]
+//        Vector 32 [unity_SpecCube0_ProbePosition]
+//        Vector 48 [unity_SpecCube0_HDR]
+//        Vector 64 [unity_SpecCube1_BoxMax]
+//        Vector 80 [unity_SpecCube1_BoxMin]
+//        Vector 96 [unity_SpecCube1_ProbePosition]
+//        Vector 112 [unity_SpecCube1_HDR]
+//        ConstBuffer "UnityProbeVolume" 112
+//        Vector 0 [unity_ProbeVolumeParams]
+//        Vector 80 [unity_ProbeVolumeSizeInv] 3
+//        Vector 96 [unity_ProbeVolumeMin] 3
+//        Matrix 16 [unity_ProbeVolumeWorldToObject]
+//        SetTexture 0 [_NormalMap] 2D 50
+//        SetTexture 1 [_ShadowMapTexture] 2D 30
+//        SetTexture 2 [_SpecularMap] 2D 60
+//        SetTexture 3 [_DiffuseMap] 2D 40
+//        SetTexture 4 [unity_Lightmap] 2D 00
+//        SetTexture 5 [unity_LightmapInd] 2D -10
+//        SetTexture 6 [unity_SpecCube0] CUBE 10
+//        SetTexture 7 [unity_SpecCube1] CUBE -10
+//        SetTexture 8 [unity_ProbeVolumeSH] 3D 20
+//        BindCB "$Globals" 0
+//        BindCB "UnityPerCamera" 1
+//        BindCB "UnityLighting" 2
+//        BindCB "UnityReflectionProbes" 3
+//        BindCB "UnityProbeVolume" 4
+//
+// Headers extracted with DarkStarSword's extract_unity55_shaders.py
+// https://github.com/DarkStarSword/3d-fixes
+
+//
+// Generated by Microsoft (R) D3D Shader Disassembler
+//
+//   using 3Dmigoto v1.2.71 on Fri Feb 23 15:38:16 2018
+//
+//
+// Input signature:
+//
+// Name                 Index   Mask Register SysValue  Format   Used
+// -------------------- ----- ------ -------- -------- ------- ------
+// SV_POSITION              0   xyzw        0      POS   float       
+// TEXCOORD                 0   xy          1     NONE   float   xy  
+// TEXCOORD                 1     zw        1     NONE   float       
+// TEXCOORD                 2   xy          2     NONE   float       
+// TEXCOORD                 3   xyzw        3     NONE   float   xyz 
+// TEXCOORD                 4   xyz         4     NONE   float   xyz 
+// TEXCOORD                 5   xyz         5     NONE   float   xyz 
+// TEXCOORD                 6   xyz         6     NONE   float   xyz 
+// TEXCOORD                 7   xyzw        7     NONE   float   xy w
+// TEXCOORD                10   xyzw        8     NONE   float   xy  
+//
+//
+// Output signature:
+//
+// Name                 Index   Mask Register SysValue  Format   Used
+// -------------------- ----- ------ -------- -------- ------- ------
+// SV_Target                0   xyzw        0   TARGET   float   xyzw
+//
+ps_4_0
+dcl_constantbuffer cb0[76], immediateIndexed
+dcl_constantbuffer cb1[9], immediateIndexed
+dcl_constantbuffer cb2[46], immediateIndexed
+dcl_constantbuffer cb3[8], immediateIndexed
+dcl_constantbuffer cb4[7], immediateIndexed
+dcl_sampler s0, mode_default
+dcl_sampler s1, mode_default
+dcl_sampler s2, mode_default
+dcl_sampler s3, mode_default
+dcl_sampler s4, mode_default
+dcl_sampler s5, mode_default
+dcl_sampler s6, mode_default
+dcl_resource_texture2d (float,float,float,float) t0
+dcl_resource_texture2d (float,float,float,float) t1
+dcl_resource_texture2d (float,float,float,float) t2
+dcl_resource_texture2d (float,float,float,float) t3
+dcl_resource_texture2d (float,float,float,float) t4
+dcl_resource_texture2d (float,float,float,float) t5
+dcl_resource_texturecube (float,float,float,float) t6
+dcl_resource_texturecube (float,float,float,float) t7
+dcl_resource_texture3d (float,float,float,float) t8
+dcl_input_ps linear v1.xy
+dcl_input_ps linear v3.xyz
+dcl_input_ps linear v4.xyz
+dcl_input_ps linear v5.xyz
+dcl_input_ps linear v6.xyz
+dcl_input_ps linear v7.xyw
+dcl_input_ps linear v8.xy
+dcl_output o0.xyzw
+dcl_temps 13
+dcl_constantbuffer cb10[4], immediateIndexed
+
+// 3DMigoto StereoParams:
+dcl_resource_texture2d (float,float,float,float) t125
+
+ld_indexable(texture2d)(float,float,float,float) r11.xyzw, l(0, 0, 0, 0), t125.xyzw
+
+
+// Unity reflection/specular fix inserted with DarkStarSword's asmtool.py:
+// asmtool.py -I ../.. --fix-unity-reflection --only-autofixed a12621b7bc982f06-ps.txt
+
+mul r11.w, -r11.x, r11.y
+mad r12.xyz, -r11.wwww, cb10[0].xyzw, cb1[4].xyzw
+
+dp3 r0.x, v4.xyzx, v4.xyzx
+rsq r0.x, r0.x
+mul r0.xyz, r0.xxxx, v4.xyzx
+add r1.xyz, -v3.xyzx, r12.xyzx
+dp3 r0.w, r1.xyzx, r1.xyzx
+rsq r0.w, r0.w
+mul r1.xyz, r0.wwww, r1.xyzx
+mad r2.xy, v1.xyxx, cb0[72].xyxx, cb0[72].zwzz
+sample r2.xyzw, r2.xyxx, t0.xyzw, s5
+mul r2.x, r2.w, r2.x
+add r3.xy, r2.xyxx, r2.xyxx
+mad r2.xy, r2.xyxx, l(2.000000, 2.000000, 0.000000, 0.000000), l(-1.000000, -1.000000, 0.000000, 0.000000)
+dp2 r0.w, r2.xyxx, r2.xyxx
+min r0.w, r0.w, l(1.000000)
+add r0.w, -r0.w, l(1.000000)
+sqrt r3.z, r0.w
+add r2.xyz, r3.xyzx, l(-1.000000, -1.000000, -1.000000, 0.000000)
+mad r2.xyz, cb0[71].wwww, r2.xyzx, l(0.000000, 0.000000, 1.000000, 0.000000)
+mul r3.xyz, r2.yyyy, v6.xyzx
+mad r2.xyw, r2.xxxx, v5.xyxz, r3.xyxz
+mad r0.xyz, r2.zzzz, r0.xyzx, r2.xywx
+dp3 r0.w, r0.xyzx, r0.xyzx
+rsq r0.w, r0.w
+mul r0.xyz, r0.wwww, r0.xyzx
+dp3 r1.w, -r1.xyzx, r0.xyzx
+add r1.w, r1.w, r1.w
+mad r2.xyz, r0.xyzx, -r1.wwww, -r1.xyzx
+dp3 r1.w, cb2[0].xyzx, cb2[0].xyzx
+rsq r1.w, r1.w
+mad r3.xyz, cb2[0].xyzx, r1.wwww, r1.xyzx
+dp3 r1.w, r3.xyzx, r3.xyzx
+rsq r1.w, r1.w
+mul r3.xyz, r1.wwww, r3.xyzx
+div r4.xy, v7.xyxx, v7.wwww
+sample r4.xyzw, r4.xyxx, t1.xyzw, s3
+mad r1.w, cb0[73].x, l(10.000000), l(1.000000)
+exp r1.w, r1.w
+add r2.w, -cb0[73].x, l(1.000000)
+eq r3.w, cb4[0].x, l(1.000000)
+if_nz r3.w
+  eq r3.w, cb4[0].y, l(1.000000)
+  mul r4.yzw, v3.yyyy, cb4[2].xxyz
+  mad r4.yzw, cb4[1].xxyz, v3.xxxx, r4.yyzw
+  mad r4.yzw, cb4[3].xxyz, v3.zzzz, r4.yyzw
+  add r4.yzw, r4.yyzw, cb4[4].xxyz
+  movc r4.yzw, r3.wwww, r4.yyzw, v3.xxyz
+  add r4.yzw, r4.yyzw, -cb4[6].xxyz
+  mul r5.yzw, r4.yyzw, cb4[5].xxyz
+  mul r3.w, r5.y, l(0.250000)
+  mul r4.y, cb4[0].z, l(0.500000)
+  mad r4.z, -cb4[0].z, l(0.500000), l(0.250000)
+  max r3.w, r3.w, r4.y
+  min r5.x, r4.z, r3.w
+  sample r6.xyzw, r5.xzwx, t8.xyzw, s2
+  add r4.yzw, r5.xxzw, l(0.000000, 0.250000, 0.000000, 0.000000)
+  sample r7.xyzw, r4.yzwy, t8.xyzw, s2
+  add r4.yzw, r5.xxzw, l(0.000000, 0.500000, 0.000000, 0.000000)
+  sample r5.xyzw, r4.yzwy, t8.xyzw, s2
+  mov r0.w, l(1.000000)
+  dp4 r6.x, r6.xyzw, r0.xyzw
+  dp4 r6.y, r7.xyzw, r0.xyzw
+  dp4 r6.z, r5.xyzw, r0.xyzw
+else 
+  mov r0.w, l(1.000000)
+  dp4 r6.x, cb2[39].xyzw, r0.xyzw
+  dp4 r6.y, cb2[40].xyzw, r0.xyzw
+  dp4 r6.z, cb2[41].xyzw, r0.xyzw
+endif 
+mul r5.xyzw, r0.yzzx, r0.xyzz
+dp4 r7.x, cb2[42].xyzw, r5.xyzw
+dp4 r7.y, cb2[43].xyzw, r5.xyzw
+dp4 r7.z, cb2[44].xyzw, r5.xyzw
+mul r0.w, r0.y, r0.y
+mad r0.w, r0.x, r0.x, -r0.w
+mad r4.yzw, cb2[45].xxyz, r0.wwww, r7.xxyz
+add r4.yzw, r4.yyzw, r6.xxyz
+max r4.yzw, r4.yyzw, l(0.000000, 0.000000, 0.000000, 0.000000)
+sample r5.xyzw, v8.xyxx, t4.xyzw, s0
+log r0.w, r5.w
+mul r0.w, r0.w, cb0[0].y
+exp r0.w, r0.w
+mul r0.w, r0.w, cb0[0].x
+mul r5.xyz, r5.xyzx, r0.wwww
+sample r6.xyzw, v8.xyxx, t5.xyzw, s0
+add r6.xyz, r6.xyzx, l(-0.500000, -0.500000, -0.500000, 0.000000)
+dp3 r0.w, r0.xyzx, r6.xyzx
+add r0.w, r0.w, l(0.500000)
+mul r5.xyz, r0.wwww, r5.xyzx
+max r0.w, r6.w, l(0.000100)
+div r5.xyz, r5.xyzx, r0.wwww
+add r4.yzw, r4.yyzw, r5.xxyz
+lt r0.w, l(0.000000), cb3[2].w
+if_nz r0.w
+  dp3 r0.w, r2.xyzx, r2.xyzx
+  rsq r0.w, r0.w
+  mul r5.xyz, r0.wwww, r2.xyzx
+  add r6.xyz, -v3.xyzx, cb3[0].xyzx
+  div r6.xyz, r6.xyzx, r5.xyzx
+  add r7.xyz, -v3.xyzx, cb3[1].xyzx
+  div r7.xyz, r7.xyzx, r5.xyzx
+  lt r8.xyz, l(0.000000, 0.000000, 0.000000, 0.000000), r5.xyzx
+  movc r6.xyz, r8.xyzx, r6.xyzx, r7.xyzx
+  min r0.w, r6.y, r6.x
+  min r0.w, r6.z, r0.w
+  add r6.xyz, v3.xyzx, -cb3[2].xyzx
+  mad r5.xyz, r5.xyzx, r0.wwww, r6.xyzx
+else 
+  mov r5.xyz, r2.xyzx
+endif 
+mad r0.w, -r2.w, l(0.700000), l(1.700000)
+mul r0.w, r0.w, r2.w
+mul r0.w, r0.w, l(6.000000)
+sample_l r5.xyzw, r5.xyzx, t6.xyzw, s1, r0.w
+add r2.w, r5.w, l(-1.000000)
+mad r2.w, cb3[3].w, r2.w, l(1.000000)
+log r2.w, r2.w
+mul r2.w, r2.w, cb3[3].y
+exp r2.w, r2.w
+mul r2.w, r2.w, cb3[3].x
+mul r6.xyz, r5.xyzx, r2.wwww
+lt r3.w, cb3[1].w, l(0.999990)
+if_nz r3.w
+  lt r3.w, l(0.000000), cb3[6].w
+  if_nz r3.w
+    dp3 r3.w, r2.xyzx, r2.xyzx
+    rsq r3.w, r3.w
+    mul r7.xyz, r2.xyzx, r3.wwww
+    add r8.xyz, -v3.xyzx, cb3[4].xyzx
+    div r8.xyz, r8.xyzx, r7.xyzx
+    add r9.xyz, -v3.xyzx, cb3[5].xyzx
+    div r9.xyz, r9.xyzx, r7.xyzx
+    lt r10.xyz, l(0.000000, 0.000000, 0.000000, 0.000000), r7.xyzx
+    movc r8.xyz, r10.xyzx, r8.xyzx, r9.xyzx
+    min r3.w, r8.y, r8.x
+    min r3.w, r8.z, r3.w
+    add r8.xyz, v3.xyzx, -cb3[6].xyzx
+    mad r2.xyz, r7.xyzx, r3.wwww, r8.xyzx
+  endif 
+  sample_l r7.xyzw, r2.xyzx, t7.xyzw, s1, r0.w
+  add r0.w, r7.w, l(-1.000000)
+  mad r0.w, cb3[7].w, r0.w, l(1.000000)
+  log r0.w, r0.w
+  mul r0.w, r0.w, cb3[7].y
+  exp r0.w, r0.w
+  mul r0.w, r0.w, cb3[7].x
+  mul r2.xyz, r7.xyzx, r0.wwww
+  mad r5.xyz, r2.wwww, r5.xyzx, -r2.xyzx
+  mad r6.xyz, cb3[1].wwww, r5.xyzx, r2.xyzx
+endif 
+mad r2.xy, v1.xyxx, cb0[75].xyxx, cb0[75].zwzz
+sample r2.xyzw, r2.xyxx, t2.xyzw, s6
+mul r2.xyz, r2.xyzx, cb0[74].xyzx
+mul r2.xyz, r2.xyzx, cb0[71].zzzz
+round_ni r0.w, r4.x
+mul r5.xyz, r0.wwww, cb0[66].xyzx
+dp3 r0.w, r3.xyzx, r0.xyzx
+max r0.w, r0.w, l(0.000000)
+log r0.w, r0.w
+mul r0.w, r0.w, r1.w
+exp r0.w, r0.w
+mul r3.xyz, r0.wwww, r5.xyzx
+mul r5.xyz, r2.xyzx, r6.xyzx
+mad r2.xyz, r3.xyzx, r2.xyzx, r5.xyzx
+mad r3.xy, v1.xyxx, cb0[68].xyxx, cb0[68].zwzz
+sample r3.xyzw, r3.xyxx, t3.xyzw, s4
+dp3 r0.x, r0.xyzx, r1.xyzx
+max r0.x, r0.x, l(0.000000)
+add r0.x, -r0.x, l(1.000000)
+add r0.y, -cb0[71].x, l(1.000000)
+log r0.x, r0.x
+mul r0.x, r0.x, r0.y
+exp r0.x, r0.x
+mul r0.y, r0.x, r0.x
+mul r0.yzw, r0.yyyy, cb0[70].xxyz
+mul r0.xyz, r0.xxxx, r0.yzwy
+mad r1.xyz, r3.xyzx, cb0[69].xyzx, r0.xyzx
+mad r1.xyz, r4.yzwy, r1.xyzx, r2.xyzx
+mad o0.xyz, r0.xyzx, cb0[71].yyyy, r1.xyzx
+mov o0.w, l(1.000000)
+ret 
+// Approximately 0 instruction slots used

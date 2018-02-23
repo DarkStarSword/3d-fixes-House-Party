@@ -1,0 +1,246 @@
+// asmtool.py -I ../.. --auto-fix-vertex-halo --fix-unusual-halo-with-inconsistent-w-optimisation --fix-unity-reflection --fix-unity-frustum-world --only-autofixed f879eb022e9f5f7e-vs.txt
+// 3DMigoto: f879eb022e9f5f7e | Matched 110 variants of 4 shaders: Standard, Standard (Roughness setup), Standard (Specular setup), Standard Double-Sided
+//
+// 0000001fffffffffe00000000000:    Unity headers extracted from Standard
+// 3e00000000000000000000000000:    Unity headers extracted from Standard (Roughness setup)
+// 00000000000000001fffffffffff:    Unity headers extracted from Standard (Specular setup)
+// 01ffffe000000000000000000000:    Unity headers extracted from Standard Double-Sided
+// 3e00000000000000000000000000:    Shader "Standard (Roughness setup)" {
+// 00000000000000001fffffffffff:    Shader "Standard (Specular setup)" {
+// 01ffffe000000000000000000000:    Shader "Standard Double-Sided" {
+// 0000001fffffffffe00000000000:    Shader "Standard" {
+// 3e00000000000000000000000000:      CustomEditor "StandardRoughnessShaderGUI"
+// 01ffffffffffffffffffffffffff:      CustomEditor "StandardShaderGUI"
+//                                    Fallback "VertexLit"
+//                                    SubShader 1/2 {
+//                                      LOD 300
+//                                      Tags { "PerformanceChecks"="False" "RenderType"="Opaque" }
+//                                      Pass 2/5 {
+//                                        Name "FORWARD_DELTA"
+//                                        Tags { "LIGHTMODE"="FORWARDADD" "PerformanceChecks"="False" "RenderType"="Opaque" "SHADOWSUPPORT"="true" }
+//                                        ZWrite Off
+//                                        Program "vp" {
+//                                          SubProgram "d3d11" {
+//                                          }
+//                                        }
+//                                      }
+//                                    }
+//                                  }
+//
+// 3e00000000000000000000000000: Unity 5.3 headers extracted from Standard (Roughness setup):
+// 00000000000000001fffffffffff: Unity 5.3 headers extracted from Standard (Specular setup):
+// 01ffffe000000000000000000000: Unity 5.3 headers extracted from Standard Double-Sided:
+// 0000001fffffffffe00000000000: Unity 5.3 headers extracted from Standard:
+//                                 API d3d11
+//                                 Shader model vs_4_0
+//                                 undeciphered1: 201708220 33 0 0
+//                                 undeciphered1a: 4
+// 0000000000000001000000000000:   Keywords { "DIRECTIONAL" "FOG_EXP2" "_ALPHATEST_ON" "_NORMALMAP" "_METALLICGLOSSMAP" }
+// 0000010000000000000000000000:   Keywords { "DIRECTIONAL" "FOG_EXP2" "_ALPHATEST_ON" "_NORMALMAP" "_SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A" }
+// 0000004000000000400000000002:   Keywords { "DIRECTIONAL" "FOG_EXP2" "_ALPHATEST_ON" "_NORMALMAP" }
+// 0200000000000000000000000008:   Keywords { "DIRECTIONAL" "FOG_EXP2" "_ALPHATEST_ON" "_SPECGLOSSMAP" "_NORMALMAP" }
+// 0000008000000002000000000000:   Keywords { "DIRECTIONAL" "FOG_EXP2" "_NORMALMAP" "_ALPHABLEND_ON" }
+// 0000000000000004000000000000:   Keywords { "DIRECTIONAL" "FOG_EXP2" "_NORMALMAP" "_ALPHAPREMULTIPLY_ON" }
+// 0000000000000010000000000040:   Keywords { "DIRECTIONAL" "FOG_EXP2" "_NORMALMAP" "_DETAIL_MULX2" }
+// 0000000000000008000000000000:   Keywords { "DIRECTIONAL" "FOG_EXP2" "_NORMALMAP" "_METALLICGLOSSMAP" "_ALPHAPREMULTIPLY_ON" }
+// 0000000000000000800000000000:   Keywords { "DIRECTIONAL" "FOG_EXP2" "_NORMALMAP" "_METALLICGLOSSMAP" }
+// 0000002000000000200000000001:   Keywords { "DIRECTIONAL" "FOG_EXP2" "_NORMALMAP" }
+// 0000000000000000000000000010:   Keywords { "DIRECTIONAL" "FOG_EXP2" "_SPECGLOSSMAP" "_NORMALMAP" "_ALPHABLEND_ON" }
+// 0000000000000000000000000020:   Keywords { "DIRECTIONAL" "FOG_EXP2" "_SPECGLOSSMAP" "_NORMALMAP" "_ALPHAPREMULTIPLY_ON" }
+// 0000000000000000000000000080:   Keywords { "DIRECTIONAL" "FOG_EXP2" "_SPECGLOSSMAP" "_NORMALMAP" "_DETAIL_MULX2" }
+// 0000000000000000000000000100:   Keywords { "DIRECTIONAL" "FOG_EXP2" "_SPECGLOSSMAP" "_NORMALMAP" "_SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A" }
+// 0000000000000000000000000004:   Keywords { "DIRECTIONAL" "FOG_EXP2" "_SPECGLOSSMAP" "_NORMALMAP" }
+// 0000000001000000000000000000:   Keywords { "DIRECTIONAL_COOKIE" "FOG_EXP2" "_ALPHATEST_ON" "_NORMALMAP" "_METALLICGLOSSMAP" }
+// 0010000000000000000000000000:   Keywords { "DIRECTIONAL_COOKIE" "FOG_EXP2" "_ALPHATEST_ON" "_NORMALMAP" "_SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A" }
+// 0004000000400000000010000000:   Keywords { "DIRECTIONAL_COOKIE" "FOG_EXP2" "_ALPHATEST_ON" "_NORMALMAP" }
+// 1000000000000000000040000000:   Keywords { "DIRECTIONAL_COOKIE" "FOG_EXP2" "_ALPHATEST_ON" "_SPECGLOSSMAP" "_NORMALMAP" }
+// 0008000002000000000000000000:   Keywords { "DIRECTIONAL_COOKIE" "FOG_EXP2" "_NORMALMAP" "_ALPHABLEND_ON" }
+// 0000000004000000000000000000:   Keywords { "DIRECTIONAL_COOKIE" "FOG_EXP2" "_NORMALMAP" "_ALPHAPREMULTIPLY_ON" }
+// 0000000010000000000200000000:   Keywords { "DIRECTIONAL_COOKIE" "FOG_EXP2" "_NORMALMAP" "_DETAIL_MULX2" }
+// 0000000008000000000000000000:   Keywords { "DIRECTIONAL_COOKIE" "FOG_EXP2" "_NORMALMAP" "_METALLICGLOSSMAP" "_ALPHAPREMULTIPLY_ON" }
+// 0000000000800000000000000000:   Keywords { "DIRECTIONAL_COOKIE" "FOG_EXP2" "_NORMALMAP" "_METALLICGLOSSMAP" }
+// 0002000000200000000008000000:   Keywords { "DIRECTIONAL_COOKIE" "FOG_EXP2" "_NORMALMAP" }
+// 0000000000000000000080000000:   Keywords { "DIRECTIONAL_COOKIE" "FOG_EXP2" "_SPECGLOSSMAP" "_NORMALMAP" "_ALPHABLEND_ON" }
+// 0000000000000000000100000000:   Keywords { "DIRECTIONAL_COOKIE" "FOG_EXP2" "_SPECGLOSSMAP" "_NORMALMAP" "_ALPHAPREMULTIPLY_ON" }
+// 0000000000000000000400000000:   Keywords { "DIRECTIONAL_COOKIE" "FOG_EXP2" "_SPECGLOSSMAP" "_NORMALMAP" "_DETAIL_MULX2" }
+// 0000000000000000000800000000:   Keywords { "DIRECTIONAL_COOKIE" "FOG_EXP2" "_SPECGLOSSMAP" "_NORMALMAP" "_SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A" }
+// 0000000000000000000020000000:   Keywords { "DIRECTIONAL_COOKIE" "FOG_EXP2" "_SPECGLOSSMAP" "_NORMALMAP" }
+// 0000000100000000000000000000:   Keywords { "POINT" "FOG_EXP2" "_ALPHATEST_ON" "_NORMALMAP" "_METALLICGLOSSMAP" }
+// 0100000000000000000000000000:   Keywords { "POINT" "FOG_EXP2" "_ALPHATEST_ON" "_NORMALMAP" "_SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A" }
+// 0040000040000000002000000000:   Keywords { "POINT" "FOG_EXP2" "_ALPHATEST_ON" "_NORMALMAP" }
+// 2000000000000000008000000000:   Keywords { "POINT" "FOG_EXP2" "_ALPHATEST_ON" "_SPECGLOSSMAP" "_NORMALMAP" }
+// 0080000200000000000000000000:   Keywords { "POINT" "FOG_EXP2" "_NORMALMAP" "_ALPHABLEND_ON" }
+// 0000000400000000000000000000:   Keywords { "POINT" "FOG_EXP2" "_NORMALMAP" "_ALPHAPREMULTIPLY_ON" }
+// 0000001000000000040000000000:   Keywords { "POINT" "FOG_EXP2" "_NORMALMAP" "_DETAIL_MULX2" }
+// 0000000800000000000000000000:   Keywords { "POINT" "FOG_EXP2" "_NORMALMAP" "_METALLICGLOSSMAP" "_ALPHAPREMULTIPLY_ON" }
+// 0000000080000000000000000000:   Keywords { "POINT" "FOG_EXP2" "_NORMALMAP" "_METALLICGLOSSMAP" }
+// 0020000020000000001000000000:   Keywords { "POINT" "FOG_EXP2" "_NORMALMAP" }
+// 0000000000000000010000000000:   Keywords { "POINT" "FOG_EXP2" "_SPECGLOSSMAP" "_NORMALMAP" "_ALPHABLEND_ON" }
+// 0000000000000000020000000000:   Keywords { "POINT" "FOG_EXP2" "_SPECGLOSSMAP" "_NORMALMAP" "_ALPHAPREMULTIPLY_ON" }
+// 0000000000000000080000000000:   Keywords { "POINT" "FOG_EXP2" "_SPECGLOSSMAP" "_NORMALMAP" "_DETAIL_MULX2" }
+// 0000000000000000100000000000:   Keywords { "POINT" "FOG_EXP2" "_SPECGLOSSMAP" "_NORMALMAP" "_SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A" }
+// 0000000000000000004000000000:   Keywords { "POINT" "FOG_EXP2" "_SPECGLOSSMAP" "_NORMALMAP" }
+// 0000000000010000000000000000:   Keywords { "POINT_COOKIE" "FOG_EXP2" "_ALPHATEST_ON" "_NORMALMAP" "_METALLICGLOSSMAP" }
+// 0001000000000000000000000000:   Keywords { "POINT_COOKIE" "FOG_EXP2" "_ALPHATEST_ON" "_NORMALMAP" "_SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A" }
+// 0000400000004000000000080000:   Keywords { "POINT_COOKIE" "FOG_EXP2" "_ALPHATEST_ON" "_NORMALMAP" }
+// 0800000000000000000000200000:   Keywords { "POINT_COOKIE" "FOG_EXP2" "_ALPHATEST_ON" "_SPECGLOSSMAP" "_NORMALMAP" }
+// 0000800000020000000000000000:   Keywords { "POINT_COOKIE" "FOG_EXP2" "_NORMALMAP" "_ALPHABLEND_ON" }
+// 0000000000040000000000000000:   Keywords { "POINT_COOKIE" "FOG_EXP2" "_NORMALMAP" "_ALPHAPREMULTIPLY_ON" }
+// 0000000000100000000001000000:   Keywords { "POINT_COOKIE" "FOG_EXP2" "_NORMALMAP" "_DETAIL_MULX2" }
+// 0000000000080000000000000000:   Keywords { "POINT_COOKIE" "FOG_EXP2" "_NORMALMAP" "_METALLICGLOSSMAP" "_ALPHAPREMULTIPLY_ON" }
+// 0000000000008000000000000000:   Keywords { "POINT_COOKIE" "FOG_EXP2" "_NORMALMAP" "_METALLICGLOSSMAP" }
+// 0000200000002000000000040000:   Keywords { "POINT_COOKIE" "FOG_EXP2" "_NORMALMAP" }
+// 0000000000000000000000400000:   Keywords { "POINT_COOKIE" "FOG_EXP2" "_SPECGLOSSMAP" "_NORMALMAP" "_ALPHABLEND_ON" }
+// 0000000000000000000000800000:   Keywords { "POINT_COOKIE" "FOG_EXP2" "_SPECGLOSSMAP" "_NORMALMAP" "_ALPHAPREMULTIPLY_ON" }
+// 0000000000000000000002000000:   Keywords { "POINT_COOKIE" "FOG_EXP2" "_SPECGLOSSMAP" "_NORMALMAP" "_DETAIL_MULX2" }
+// 0000000000000000000004000000:   Keywords { "POINT_COOKIE" "FOG_EXP2" "_SPECGLOSSMAP" "_NORMALMAP" "_SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A" }
+// 0000000000000000000000100000:   Keywords { "POINT_COOKIE" "FOG_EXP2" "_SPECGLOSSMAP" "_NORMALMAP" }
+// 0000000000000100000000000000:   Keywords { "SPOT" "FOG_EXP2" "_ALPHATEST_ON" "_NORMALMAP" "_METALLICGLOSSMAP" }
+// 0000100000000000000000000000:   Keywords { "SPOT" "FOG_EXP2" "_ALPHATEST_ON" "_NORMALMAP" "_SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A" }
+// 0000040000000040000000000400:   Keywords { "SPOT" "FOG_EXP2" "_ALPHATEST_ON" "_NORMALMAP" }
+// 0400000000000000000000001000:   Keywords { "SPOT" "FOG_EXP2" "_ALPHATEST_ON" "_SPECGLOSSMAP" "_NORMALMAP" }
+// 0000080000000200000000000000:   Keywords { "SPOT" "FOG_EXP2" "_NORMALMAP" "_ALPHABLEND_ON" }
+// 0000000000000400000000000000:   Keywords { "SPOT" "FOG_EXP2" "_NORMALMAP" "_ALPHAPREMULTIPLY_ON" }
+// 0000000000001000000000008000:   Keywords { "SPOT" "FOG_EXP2" "_NORMALMAP" "_DETAIL_MULX2" }
+// 0000000000000800000000000000:   Keywords { "SPOT" "FOG_EXP2" "_NORMALMAP" "_METALLICGLOSSMAP" "_ALPHAPREMULTIPLY_ON" }
+// 0000000000000080000000000000:   Keywords { "SPOT" "FOG_EXP2" "_NORMALMAP" "_METALLICGLOSSMAP" }
+// 0000020000000020000000000200:   Keywords { "SPOT" "FOG_EXP2" "_NORMALMAP" }
+// 0000000000000000000000002000:   Keywords { "SPOT" "FOG_EXP2" "_SPECGLOSSMAP" "_NORMALMAP" "_ALPHABLEND_ON" }
+// 0000000000000000000000004000:   Keywords { "SPOT" "FOG_EXP2" "_SPECGLOSSMAP" "_NORMALMAP" "_ALPHAPREMULTIPLY_ON" }
+// 0000000000000000000000010000:   Keywords { "SPOT" "FOG_EXP2" "_SPECGLOSSMAP" "_NORMALMAP" "_DETAIL_MULX2" }
+// 0000000000000000000000020000:   Keywords { "SPOT" "FOG_EXP2" "_SPECGLOSSMAP" "_NORMALMAP" "_SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A" }
+// 0000000000000000000000000800:   Keywords { "SPOT" "FOG_EXP2" "_SPECGLOSSMAP" "_NORMALMAP" }
+//                                 undeciphered2: 1 0 5 0 0 0
+//                                 undeciphered3: 155 5 0 0 1 2 3 4 4 5 7 8
+// 020001e00000001fe000000001ff:   ConstBuffer "$Globals" 1200
+// 3dfffe1fffffffe01ffffffffe00:   ConstBuffer "$Globals" 1264
+//                                 Vector 1120 [_MainTex_ST]
+//                                 Vector 1136 [_DetailAlbedoMap_ST]
+//                                 Float 1180 [_UVSec]
+//                                 ConstBuffer "UnityPerCamera" 144
+//                                 Vector 64 [_WorldSpaceCameraPos] 3
+//                                 ConstBuffer "UnityLighting" 768
+//                                 Vector 0 [_WorldSpaceLightPos0]
+//                                 ConstBuffer "UnityPerDraw" 160
+//                                 Vector 144 [unity_WorldTransformParams]
+//                                 Matrix 0 [unity_ObjectToWorld]
+//                                 Matrix 64 [unity_WorldToObject]
+//                                 ConstBuffer "UnityPerFrame" 368
+//                                 Matrix 272 [unity_MatrixVP]
+//                                 BindCB "$Globals" 0
+//                                 BindCB "UnityPerCamera" 1
+//                                 BindCB "UnityLighting" 2
+//                                 BindCB "UnityPerDraw" 3
+//                                 BindCB "UnityPerFrame" 4
+//
+// Headers extracted with DarkStarSword's extract_unity55_shaders.py
+// https://github.com/DarkStarSword/3d-fixes
+
+//
+// Generated by Microsoft (R) D3D Shader Disassembler
+//
+//   using 3Dmigoto v1.2.71 on Fri Feb 23 16:00:40 2018
+//
+//
+// Input signature:
+//
+// Name                 Index   Mask Register SysValue  Format   Used
+// -------------------- ----- ------ -------- -------- ------- ------
+// POSITION                 0   xyzw        0     NONE   float   xyzw
+// NORMAL                   0   xyz         1     NONE   float   xyz 
+// TEXCOORD                 0   xy          2     NONE   float   xy  
+// TEXCOORD                 1   xy          3     NONE   float   xy  
+// TANGENT                  0   xyzw        4     NONE   float   xyzw
+//
+//
+// Output signature:
+//
+// Name                 Index   Mask Register SysValue  Format   Used
+// -------------------- ----- ------ -------- -------- ------- ------
+// SV_POSITION              0   xyzw        0      POS   float   xyzw
+// TEXCOORD                 0   xyzw        1     NONE   float   xyzw
+// TEXCOORD                 1   xyz         2     NONE   float   xyz 
+// TEXCOORD                 7      w        2     NONE   float      w
+// TEXCOORD                 2   xyzw        3     NONE   float   xyzw
+// TEXCOORD                 3   xyzw        4     NONE   float   xyzw
+// TEXCOORD                 4   xyzw        5     NONE   float   xyzw
+// TEXCOORD                 5   xyz         6     NONE   float   xyz 
+//
+vs_4_0
+dcl_constantbuffer cb0[74], immediateIndexed
+dcl_constantbuffer cb1[9], immediateIndexed
+dcl_constantbuffer cb2[1], immediateIndexed
+dcl_constantbuffer cb3[10], immediateIndexed
+dcl_constantbuffer cb4[23], immediateIndexed
+dcl_input v0.xyzw
+dcl_input v1.xyz
+dcl_input v2.xy
+dcl_input v3.xy
+dcl_input v4.xyzw
+dcl_output_siv o0.xyzw, position
+dcl_output o1.xyzw
+dcl_output o2.xyz
+dcl_output o2.w
+dcl_output o3.xyzw
+dcl_output o4.xyzw
+dcl_output o5.xyzw
+dcl_output o6.xyz
+dcl_temps 6
+dcl_constantbuffer cb10[4], immediateIndexed
+
+// 3DMigoto StereoParams:
+dcl_resource_texture2d (float,float,float,float) t125
+
+ld_indexable(texture2d)(float,float,float,float) r4.xyzw, l(0, 0, 0, 0), t125.xyzw
+
+
+// Unity reflection/specular fix inserted with DarkStarSword's asmtool.py:
+// asmtool.py -I ../.. --auto-fix-vertex-halo --fix-unusual-halo-with-inconsistent-w-optimisation --fix-unity-reflection --fix-unity-frustum-world --only-autofixed f879eb022e9f5f7e-vs.txt
+
+mul r4.w, -r4.x, r4.y
+mad r5.xyz, -r4.wwww, cb10[0].xyzw, cb1[4].xyzw
+
+mul r0.xyzw, v0.yyyy, cb3[1].xyzw
+mad r0.xyzw, cb3[0].xyzw, v0.xxxx, r0.xyzw
+mad r0.xyzw, cb3[2].xyzw, v0.zzzz, r0.xyzw
+add r0.xyzw, r0.xyzw, cb3[3].xyzw
+mul r1.xyzw, r0.yyyy, cb4[18].xyzw
+mad r1.xyzw, cb4[17].xyzw, r0.xxxx, r1.xyzw
+mad r1.xyzw, cb4[19].xyzw, r0.zzzz, r1.xyzw
+mad r0.xyzw, cb4[20].xyzw, r0.wwww, r1.xyzw
+mov o0.xyzw, r0.xyzw
+mov o2.w, r0.z
+eq r0.x, cb0[73].w, l(0.000000)
+movc r0.xy, r0.xxxx, v2.xyxx, v3.xyxx
+mad o1.zw, r0.xxxy, cb0[71].xxxy, cb0[71].zzzw
+mad o1.xy, v2.xyxx, cb0[70].xyxx, cb0[70].zwzz
+mul r0.xyz, v0.yyyy, cb3[1].xyzx
+mad r0.xyz, cb3[0].xyzx, v0.xxxx, r0.xyzx
+mad r0.xyz, cb3[2].xyzx, v0.zzzz, r0.xyzx
+mad r0.xyz, cb3[3].xyzx, v0.wwww, r0.xyzx
+add o2.xyz, r0.xyzx, -r5.xyzx
+mul r1.xyz, v4.yyyy, cb3[1].xyzx
+mad r1.xyz, cb3[0].xyzx, v4.xxxx, r1.xyzx
+mad r1.xyz, cb3[2].xyzx, v4.zzzz, r1.xyzx
+dp3 r0.w, r1.xyzx, r1.xyzx
+rsq r0.w, r0.w
+mul r1.xyz, r0.wwww, r1.xyzx
+mov o3.xyz, r1.xyzx
+mad r2.xyz, -r0.xyzx, cb2[0].wwww, cb2[0].xyzx
+mov o6.xyz, r0.xyzx
+mov o3.w, r2.x
+dp3 r0.x, v1.xyzx, cb3[4].xyzx
+dp3 r0.y, v1.xyzx, cb3[5].xyzx
+dp3 r0.z, v1.xyzx, cb3[6].xyzx
+dp3 r0.w, r0.xyzx, r0.xyzx
+rsq r0.w, r0.w
+mul r0.xyz, r0.wwww, r0.xyzx
+mul r3.xyz, r1.yzxy, r0.zxyz
+mad r1.xyz, r0.yzxy, r1.zxyz, -r3.xyzx
+mov o5.xyz, r0.xyzx
+mul r0.x, v4.w, cb3[9].w
+mul o4.xyz, r0.xxxx, r1.xyzx
+mov o4.w, r2.y
+mov o5.w, r2.z
+ret 
+// Approximately 0 instruction slots used

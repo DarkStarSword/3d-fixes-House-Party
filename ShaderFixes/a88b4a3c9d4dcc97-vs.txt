@@ -1,0 +1,215 @@
+// asmtool.py -I ../.. --auto-fix-vertex-halo --fix-unusual-halo-with-inconsistent-w-optimisation --fix-unity-reflection --fix-unity-frustum-world --only-autofixed a88b4a3c9d4dcc97-vs.txt
+// 3DMigoto: a88b4a3c9d4dcc97 | Matched 18 variants of 1 shaders: Standard
+//
+//           Unity headers extracted from Standard
+//           Shader "Standard" {
+//             CustomEditor "StandardShaderGUI"
+//             Fallback "VertexLit"
+//             SubShader 1/2 {
+//               LOD 300
+//               Tags { "PerformanceChecks"="False" "RenderType"="Opaque" }
+//               Pass 1/5 {
+//                 Name "FORWARD"
+//                 Tags { "LIGHTMODE"="FORWARDBASE" "PerformanceChecks"="False" "RenderType"="Opaque" "SHADOWSUPPORT"="true" }
+//                 ZWrite [_ZWrite]
+//                 Program "vp" {
+//                   SubProgram "d3d11" {
+//                   }
+//                 }
+//               }
+//             }
+//           }
+//
+//        Unity 5.3 headers extracted from Standard:
+//          API d3d11
+//          Shader model vs_4_0
+//          undeciphered1: 201708220 52 0 0
+//          undeciphered1a: 5
+// 04000:   Keywords { "DIRECTIONAL" "LIGHTPROBE_SH" "VERTEXLIGHT_ON" "INSTANCING_ON" "_ALPHABLEND_ON" "_DETAIL_MULX2" }
+// 10000:   Keywords { "DIRECTIONAL" "LIGHTPROBE_SH" "VERTEXLIGHT_ON" "INSTANCING_ON" "_ALPHABLEND_ON" "_GLOSSYREFLECTIONS_OFF" }
+// 00040:   Keywords { "DIRECTIONAL" "LIGHTPROBE_SH" "VERTEXLIGHT_ON" "INSTANCING_ON" "_ALPHABLEND_ON" }
+// 00100:   Keywords { "DIRECTIONAL" "LIGHTPROBE_SH" "VERTEXLIGHT_ON" "INSTANCING_ON" "_ALPHAPREMULTIPLY_ON" }
+// 00020:   Keywords { "DIRECTIONAL" "LIGHTPROBE_SH" "VERTEXLIGHT_ON" "INSTANCING_ON" "_ALPHATEST_ON" "_METALLICGLOSSMAP" }
+// 00002:   Keywords { "DIRECTIONAL" "LIGHTPROBE_SH" "VERTEXLIGHT_ON" "INSTANCING_ON" "_ALPHATEST_ON" }
+// 01000:   Keywords { "DIRECTIONAL" "LIGHTPROBE_SH" "VERTEXLIGHT_ON" "INSTANCING_ON" "_DETAIL_MULX2" }
+// 00400:   Keywords { "DIRECTIONAL" "LIGHTPROBE_SH" "VERTEXLIGHT_ON" "INSTANCING_ON" "_METALLICGLOSSMAP" "_ALPHAPREMULTIPLY_ON" }
+// 00008:   Keywords { "DIRECTIONAL" "LIGHTPROBE_SH" "VERTEXLIGHT_ON" "INSTANCING_ON" "_METALLICGLOSSMAP" }
+// 20000:   Keywords { "DIRECTIONAL" "LIGHTPROBE_SH" "VERTEXLIGHT_ON" "INSTANCING_ON" }
+// 08000:   Keywords { "DIRECTIONAL" "LIGHTPROBE_SH" "_EMISSION" "VERTEXLIGHT_ON" "INSTANCING_ON" "_ALPHABLEND_ON" "_DETAIL_MULX2" }
+// 00080:   Keywords { "DIRECTIONAL" "LIGHTPROBE_SH" "_EMISSION" "VERTEXLIGHT_ON" "INSTANCING_ON" "_ALPHABLEND_ON" }
+// 00200:   Keywords { "DIRECTIONAL" "LIGHTPROBE_SH" "_EMISSION" "VERTEXLIGHT_ON" "INSTANCING_ON" "_ALPHAPREMULTIPLY_ON" }
+// 00004:   Keywords { "DIRECTIONAL" "LIGHTPROBE_SH" "_EMISSION" "VERTEXLIGHT_ON" "INSTANCING_ON" "_ALPHATEST_ON" }
+// 02000:   Keywords { "DIRECTIONAL" "LIGHTPROBE_SH" "_EMISSION" "VERTEXLIGHT_ON" "INSTANCING_ON" "_DETAIL_MULX2" }
+// 00800:   Keywords { "DIRECTIONAL" "LIGHTPROBE_SH" "_EMISSION" "VERTEXLIGHT_ON" "INSTANCING_ON" "_METALLICGLOSSMAP" "_ALPHAPREMULTIPLY_ON" }
+// 00010:   Keywords { "DIRECTIONAL" "LIGHTPROBE_SH" "_EMISSION" "VERTEXLIGHT_ON" "INSTANCING_ON" "_METALLICGLOSSMAP" }
+// 00001:   Keywords { "DIRECTIONAL" "LIGHTPROBE_SH" "_EMISSION" "VERTEXLIGHT_ON" "INSTANCING_ON" }
+//          undeciphered2: 1 0 6 0 0 0
+//          undeciphered3: 27 4 0 0 1 2 3 4 4 5
+//          ConstBuffer "$Globals" 1200
+//          Vector 1120 [_MainTex_ST]
+//          Vector 1136 [_DetailAlbedoMap_ST]
+//          Float 1180 [_UVSec]
+//          ConstBuffer "UnityPerCamera" 144
+//          Vector 64 [_WorldSpaceCameraPos] 3
+//          ConstBuffer "UnityLighting" 768
+//          Vector 48 [unity_4LightPosX0]
+//          Vector 64 [unity_4LightPosY0]
+//          Vector 80 [unity_4LightPosZ0]
+//          Vector 96 [unity_4LightAtten0]
+//          Vector 112 [unity_LightColor0]
+//          Vector 128 [unity_LightColor1]
+//          Vector 144 [unity_LightColor2]
+//          Vector 160 [unity_LightColor3]
+//          Vector 176 [unity_LightColor4]
+//          Vector 192 [unity_LightColor5]
+//          Vector 208 [unity_LightColor6]
+//          Vector 224 [unity_LightColor7]
+//          Vector 672 [unity_SHBr]
+//          Vector 688 [unity_SHBg]
+//          Vector 704 [unity_SHBb]
+//          Vector 720 [unity_SHC]
+//          ConstBuffer "UnityPerFrame" 368
+//          Matrix 272 [unity_MatrixVP]
+//          ConstBuffer "UnityDrawCallInfo" 16
+//          ScalarInt 0 [unity_BaseInstanceID]
+//          ConstBuffer "UnityInstancing_PerDraw0" 256
+//          Struct 0 [unity_Builtins0Array] 2 128
+//          Matrix 0 [unity_ObjectToWorldArray]
+//          Matrix 64 [unity_WorldToObjectArray]
+//          BindCB "$Globals" 0
+//          BindCB "UnityPerCamera" 1
+//          BindCB "UnityLighting" 2
+//          BindCB "UnityPerFrame" 3
+//          BindCB "UnityDrawCallInfo" 4
+//          BindCB "UnityInstancing_PerDraw0" 5
+//
+// Headers extracted with DarkStarSword's extract_unity55_shaders.py
+// https://github.com/DarkStarSword/3d-fixes
+
+//
+// Generated by Microsoft (R) D3D Shader Disassembler
+//
+//   using 3Dmigoto v1.2.71 on Fri Feb 23 15:40:01 2018
+//
+//
+// Input signature:
+//
+// Name                 Index   Mask Register SysValue  Format   Used
+// -------------------- ----- ------ -------- -------- ------- ------
+// POSITION                 0   xyzw        0     NONE   float   xyzw
+// NORMAL                   0   xyz         1     NONE   float   xyz 
+// TEXCOORD                 0   xy          2     NONE   float   xy  
+// TEXCOORD                 1   xy          3     NONE   float   xy  
+// SV_InstanceID            0   x           4   INSTID    uint   x   
+//
+//
+// Output signature:
+//
+// Name                 Index   Mask Register SysValue  Format   Used
+// -------------------- ----- ------ -------- -------- ------- ------
+// SV_POSITION              0   xyzw        0      POS   float   xyzw
+// TEXCOORD                 0   xyzw        1     NONE   float   xyzw
+// TEXCOORD                 1   xyz         2     NONE   float   xyz 
+// TEXCOORD                 2   xyzw        3     NONE   float   xyzw
+// TEXCOORD                 3   xyzw        4     NONE   float   xyzw
+// TEXCOORD                 4   xyzw        5     NONE   float   xyzw
+// TEXCOORD                 5   xyzw        6     NONE   float   xyzw
+// SV_InstanceID            0   x           7     NONE    uint   x   
+//
+vs_4_0
+dcl_constantbuffer cb0[74], immediateIndexed
+dcl_constantbuffer cb1[9], immediateIndexed
+dcl_constantbuffer cb2[46], immediateIndexed
+dcl_constantbuffer cb3[23], immediateIndexed
+dcl_constantbuffer cb4[1], immediateIndexed
+dcl_constantbuffer cb5[15], dynamicIndexed
+dcl_input v0.xyzw
+dcl_input v1.xyz
+dcl_input v2.xy
+dcl_input v3.xy
+dcl_input_sgv v4.x, instance_id
+dcl_output_siv o0.xyzw, position
+dcl_output o1.xyzw
+dcl_output o2.xyz
+dcl_output o3.xyzw
+dcl_output o4.xyzw
+dcl_output o5.xyzw
+dcl_output o6.xyzw
+dcl_output o7.x
+dcl_temps 7
+dcl_constantbuffer cb10[4], immediateIndexed
+
+// 3DMigoto StereoParams:
+dcl_resource_texture2d (float,float,float,float) t125
+
+ld_indexable(texture2d)(float,float,float,float) r5.xyzw, l(0, 0, 0, 0), t125.xyzw
+
+
+// Unity reflection/specular fix inserted with DarkStarSword's asmtool.py:
+// asmtool.py -I ../.. --auto-fix-vertex-halo --fix-unusual-halo-with-inconsistent-w-optimisation --fix-unity-reflection --fix-unity-frustum-world --only-autofixed a88b4a3c9d4dcc97-vs.txt
+
+mul r5.w, -r5.x, r5.y
+mad r6.xyz, -r5.wwww, cb10[0].xyzw, cb1[4].xyzw
+
+iadd r0.x, v4.x, cb4[0].x
+ishl r0.x, r0.x, l(3)
+mul r1.xyzw, v0.yyyy, cb5[r0.x + 1].xyzw
+mad r1.xyzw, cb5[r0.x + 0].xyzw, v0.xxxx, r1.xyzw
+mad r1.xyzw, cb5[r0.x + 2].xyzw, v0.zzzz, r1.xyzw
+add r1.xyzw, r1.xyzw, cb5[r0.x + 3].xyzw
+mul r2.xyzw, r1.yyyy, cb3[18].xyzw
+mad r2.xyzw, cb3[17].xyzw, r1.xxxx, r2.xyzw
+mad r2.xyzw, cb3[19].xyzw, r1.zzzz, r2.xyzw
+mad o0.xyzw, cb3[20].xyzw, r1.wwww, r2.xyzw
+eq r0.y, cb0[73].w, l(0.000000)
+movc r0.yz, r0.yyyy, v2.xxyx, v3.xxyx
+mad o1.zw, r0.yyyz, cb0[71].xxxy, cb0[71].zzzw
+mad o1.xy, v2.xyxx, cb0[70].xyxx, cb0[70].zwzz
+mul r0.yzw, v0.yyyy, cb5[r0.x + 1].xxyz
+mad r0.yzw, cb5[r0.x + 0].xxyz, v0.xxxx, r0.yyzw
+mad r0.yzw, cb5[r0.x + 2].xxyz, v0.zzzz, r0.yyzw
+mad r1.xyz, cb5[r0.x + 3].xyzx, v0.wwww, r0.yzwy
+add o2.xyz, r1.xyzx, -r6.xyzx
+mov r1.w, l(0)
+mov o3.xyzw, r1.wwwx
+mov o4.xyzw, r1.wwwy
+dp3 r2.x, v1.xyzx, cb5[r0.x + 4].xyzx
+dp3 r2.y, v1.xyzx, cb5[r0.x + 5].xyzx
+dp3 r2.z, v1.xyzx, cb5[r0.x + 6].xyzx
+dp3 r0.x, r2.xyzx, r2.xyzx
+rsq r0.x, r0.x
+mul r0.xyz, r0.xxxx, r2.xyzx
+mov o5.xyz, r0.xyzx
+mov o5.w, r1.z
+add r2.xyzw, -r1.xxxx, cb2[3].xyzw
+add r3.xyzw, -r1.yyyy, cb2[4].xyzw
+add r1.xyzw, -r1.zzzz, cb2[5].xyzw
+mul r4.xyzw, r0.yyyy, r3.xyzw
+mul r3.xyzw, r3.xyzw, r3.xyzw
+mad r3.xyzw, r2.xyzw, r2.xyzw, r3.xyzw
+mad r2.xyzw, r2.xyzw, r0.xxxx, r4.xyzw
+mad r2.xyzw, r1.xyzw, r0.zzzz, r2.xyzw
+mad r1.xyzw, r1.xyzw, r1.xyzw, r3.xyzw
+max r1.xyzw, r1.xyzw, l(0.000001, 0.000001, 0.000001, 0.000001)
+rsq r3.xyzw, r1.xyzw
+mad r1.xyzw, r1.xyzw, cb2[6].xyzw, l(1.000000, 1.000000, 1.000000, 1.000000)
+div r1.xyzw, l(1.000000, 1.000000, 1.000000, 1.000000), r1.xyzw
+mul r2.xyzw, r2.xyzw, r3.xyzw
+max r2.xyzw, r2.xyzw, l(0.000000, 0.000000, 0.000000, 0.000000)
+mul r1.xyzw, r1.xyzw, r2.xyzw
+mul r2.xyz, r1.yyyy, cb2[8].xyzx
+mad r2.xyz, cb2[7].xyzx, r1.xxxx, r2.xyzx
+mad r1.xyz, cb2[9].xyzx, r1.zzzz, r2.xyzx
+mad r1.xyz, cb2[10].xyzx, r1.wwww, r1.xyzx
+mul r0.w, r0.y, r0.y
+mad r0.w, r0.x, r0.x, -r0.w
+mul r2.xyzw, r0.yzzx, r0.xyzz
+dp4 r0.x, cb2[42].xyzw, r2.xyzw
+dp4 r0.y, cb2[43].xyzw, r2.xyzw
+dp4 r0.z, cb2[44].xyzw, r2.xyzw
+mad r0.xyz, cb2[45].xyzx, r0.wwww, r0.xyzx
+add o6.xyz, r0.xyzx, r1.xyzx
+mov o6.w, l(0)
+mov o7.x, v4.x
+ret 
+// Approximately 0 instruction slots used
